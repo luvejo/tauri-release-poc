@@ -37,6 +37,9 @@ jobs:
       - uses: tauri-apps/tauri-action@dev
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SIGN: ${{ secrets.APP_IMAGE_SIGN }}
+          SIGN_KEY: ${{ secrets.APP_IMAGE_SIGN_KEY }}
+          APPIMAGETOOL_SIGN_PASSPHRASE: ${{ secrets.APP_IMAGE_SIGN_PASSPHRASE }}
         with:
           tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
           releaseName: "App v__VERSION__"
